@@ -1,0 +1,128 @@
+---
+toc: false
+format:
+  html:
+    css: css/quarto_style.css
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+---
+```{python}
+#| echo: false
+
+import pandas as pd
+from great_tables import GT
+from resume_functions.resume_functions import create_star_rating
+
+```
+<!-- :::{.column-body-outset} -->
+
+::: {.columns}
+
+::: {.column .side-column width="35%"}
+# Eric Narro
+
+![](./data/logo.png)
+
+## Analytics Engineer
+
+🏠 France  
+☎️ +33 6 61 43 95 29  
+📧 eric.narro@gmail.com  
+<i class="fa-brands fa-linkedin-in"></i> [LinkedIn](https://www.linkedin.com/in/ericnarro/)  
+<i class="fa-brands fa-github"></i> [GitHub](https://github.com/enarroied)  
+🌐 [ericnarrodata](https://www.ericnarrodata.com/)  
+
+## About Me
+Data Analyst and Integration specialist with experience in the agriculture and insurance fields. I participate in all facets of analytics and data processing, such as building integration pipelines with Airflow, data modelling, arranging data, building reports or data storytelling. 
+
+```{python}
+#| echo: false
+##### Skills ####
+df_skills = pd.read_csv("./data/skills.csv")
+df_skills["stars"] = df_skills["mark"].apply(create_star_rating)
+
+GT(
+    df_skills[["skill_type", "skill", "description", "stars"]],
+    rowname_col="skill",
+    groupname_col="skill_type",
+).tab_header("Skills").cols_label(skill="", description="", stars="").cols_width(
+    cases={"skill": "10%", "description": "50%", "stars": "20%"}
+)
+```
+
+```{python}
+#| echo: false
+
+df_languages = pd.read_csv("./data/languages.csv")
+df_languages["stars"] = df_languages["mark"].apply(create_star_rating)
+
+GT(df_languages[["Language", "Level", "stars"]]).tab_header("Languages").cols_label(
+    Language="", Level="", stars=""
+).cols_width(
+    cases={"Language": "20%", "Level": "20%", "stars": "10%"}
+)
+```
+:::
+::: {.column .main-section width="65%"}
+
+## 💡 Projects and Publications
+
+**2022 - Today | Writer on [Medium](https://medium.com/@ericnarro) | Python, Data Analysis, AI**  
+Wrote 50+ articles about Python libraries, Taipy, AI/LLMs and personal thoughts.
+
+**2019 - 2022 | Several scripts for data extraction and wrangling | Python**  
+Automated data extraction and wrangling, leading to **several days (5+/year) of work saved for more valuable tasks**, also reduced manual mistakes.
+
+## 🛠️ Experience
+
+**2022 - today |Sophia Engineering | Analytics Engineer**  
+At ProBTP (Insurance company): Created data integration and analytical pipelines. Automated manual tasks, saving days of work. Optimized SQL queries, reducing execution time by 70%. Worked on GDPR compliance. 
+
+**2020 - 2022 | Agrobio Perigord | Vineyard Technician and Coordinator (19 months)**  
+Counselor and team manager. Conducted experimental design statistics with R. Created data visualization and geographical data reports. Implemented automation with Python and developed web applications using HTML5, Javascript, PHP, and MySQL.
+
+**2016 - 2020 | Vignerons de Passa Saint André | Vineyard Technician (4 years 3 months)**  
+Provided counseling. Implemented automation with Excel and Python.
+
+**2015 - 2016 | Louerion Terres d'Alliance | Vineyard Technician (6 months)**  
+Offered technical advice. Managed harvest operations with specialized software and Excel.
+
+**2014 - 2015 | Demeter France | Project Manager (1 year)**  
+Conducted meetings in several regions to update production standards.
+
+**2013 - 2014 | Château La Tour de By | Cellar Worker (9 months)**  
+Performed wine-making and wine aging operations.
+
+## 🎓 Education
+
+**MOOCs and courses**: 
+
+* **2022 Data Warehousing for Buisiness Intelligence (Coursera)**: Database Management Essentials. Data Warehouse Concepts, Design, and Data Integration. Relational Database Support for Data Warehouses. Business Intelligence Concepts, Tools, and Applications. Design and Build a Data Warehouse for Business Intelligence Implementation.
+* **2022 Google Data Analytics Specialization (Coursera)**: Tools and platforms including spreadsheets, SQL, Tableau, and R. Learned how to prepare, process, analyze, and share data for thoughtful action
+* **2022 IBM’s Data Science Professional Certificate (Coursera)**: Data science and AI with Python, SQL and DBMS (DB2) in IBM Watson, data visalization (matplotlib, Plotly, Dash and Folium)
+* **2024 | Machine learning in Python with scikit-learn (France Université Numérique - INRIA)**
+* **2024 | Semarchy xDI - bases (Semarchy)**
+
+**2018 - 2020 1st year | BS in Computer Science IED | Université Paris 8**  
+Learned Python, C, LISP, Web stack (HTML, CSS, JavaScript, PHP, MySQL
+and hosted a site in a AWS EC2 instance), system administration (Linux
+with Bash), computer architecture. Used Jupyter Notebook or IBM Watson
+
+**2010 - 2012 | M.Sc. Viticulture and Oenology | Université de Bordeaux 2**
+
+**2006 - 2010 | B. Sc. Biology | Universidad Autonoma de Madrid (UAM)**  
+Included calculus, algebra, statistics, bio-statistics and bio-informatics
+
+:::
+
+:::
+
+
+
+
+
+
+
+
+<!-- ::: -->

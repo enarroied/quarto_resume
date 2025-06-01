@@ -1,0 +1,16 @@
+skill_type,skill,description,mark
+Programming,Python,"pandas, Taipy, Plotly, Seaborn, Polars...",4.5
+Programming,R,,2.5
+Programming,Web Stack,"PHP, JS, HTML, CSS",2.5
+Programming,VBA,Excel macros,3
+Data Pipelines,Airflow,"Report automation, data integration",3
+Data Pipelines,ETL/ELT,Semarchy xDI,2
+Systems,Linux,Debian-based,3.5
+Systems,Git,,4
+Systems,Cloud,"AWS, Google Cloud, Watson...",2.5
+Systems,Docker,,3
+DBMS,SQL,"PostgreSQL, DB2, Netezza...",4.5
+DBMS,Modelling,"Data Warehousing, Star Schemas...",4.5
+Data Science,Machine Learning,"Regression, trees, XG Boost...",3.5
+Data Science,Time Series Analys,"SK Time, Prophet, Statsmodels...",3
+Data Science,Gen AI,"LLMs chatbots and agents (LangChain)",3
