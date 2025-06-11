@@ -71,12 +71,12 @@ GT(df_languages[["Language", "Level", "stars"]]).tab_header("Languages").cols_la
 **2022 - Today | Writer on [Medium](https://medium.com/@ericnarro) | Python, Data Analysis, AI**  
 Wrote 50+ articles about Python libraries, Taipy, AI/LLMs and personal thoughts.
 
-**2019 - 2022 | Several scripts for data extraction and wrangling | Python**  
-Automated data extraction and wrangling, leading to **several days (5+/year) of work saved for more valuable tasks**, also reduced manual mistakes.
+**2024 - 2025 | Open source contributions to Taipy | Community & Documentation**  
+Participated in the open source project [Taipy](https://github.com/Avaiga/taipy), reporting 20+ issues tanks to intensive use of the app.
 
 ## 🛠️ Experience
 
-**2022 - today |Sophia Engineering | Analytics Engineer**  
+**2022 - today | Sophia Engineering | Analytics Engineer**  
 At ProBTP (Insurance company): Created data integration and analytical pipelines. Automated manual tasks, saving days of work. Optimized SQL queries, reducing execution time by 70%. Worked on GDPR compliance. 
 
 **2020 - 2022 | Agrobio Perigord | Vineyard Technician and Coordinator (19 months)**  
