@@ -1,17 +1,17 @@
 [![Built with Quarto](https://img.shields.io/badge/Built_with-Quarto-2196F3?style=flat&logo=quarto)](https://quarto.org)
 [![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB?logo=python)](https://python.org)
 
-# Quarto Resume
+# Quarto Résumé
 
-My personal resume, using Quarto and some other awesome libraries.
+My personal résumé, using Quarto and some other awesome libraries.
 
 ## Workflow
 
 Built using these tools:
 
-* [Quarto](https://quarto.org/) to create an HTML - based report
-* [WeasyPrint](https://doc.courtbouillon.org/weasyprint/stable/index.html) (see on [PyPi](https://pypi.org/project/weasyprint/)) to render the HTML as PDF
-* [Great-Tables](https://posit-dev.github.io/great-tables/) (see on [PyPi](https://pypi.org/project/great-tables/)) to create the side tables with the skills
+* [Quarto](https://quarto.org/) to create an HTML-based report
+* [WeasyPrint](https://doc.courtbouillon.org/weasyprint/stable/index.html) (see on [PyPI](https://pypi.org/project/weasyprint/)) to render the HTML as PDF
+* [Great-Tables](https://posit-dev.github.io/great-tables/) (see on [PyPI](https://pypi.org/project/great-tables/)) to create the side tables with the skills
 
 While it's not a direct part of this project, I created the QR Code for the logo using [Segno](https://pypi.org/project/segno/).
 
@@ -24,7 +24,7 @@ weasyprint resume.html resume.pdf -s css/report_style.css
 
 ## Why use HTML + WeasyPrint
 
-Quarto allows to generate PDF reports directly. The "problem" of this approach is that it uses LaTeX under the hood. If your resume needs to look academic, you should *probably* use that option, and look at [projects like this one](https://github.com/schochastics/quarto-cv), or [plenty of others](https://github.com/mcanouil/awesome-quarto).
+Quarto can generate PDF reports directly. The "problem" with this approach is that it uses LaTeX under the hood. If your résumé needs to look academic, you should *probably* use that option, and look at [projects like this one](https://github.com/schochastics/quarto-cv), or [plenty of others](https://github.com/mcanouil/awesome-quarto).
 
 The approach I took has the following advantages (althought this may be subjective):
 
