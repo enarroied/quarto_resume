@@ -1,12 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Open+Sans&display=swap');
 
-
 body {
   font-family: 'Roboto', 'Open Sans', sans-serif;
   font-size: 11px;
   line-height: 1.4;
 }
-
 
 table {
   font-size: 8px!important;
@@ -16,7 +14,7 @@ table {
 }
 
 th, td {
-  padding: 3px 6px !important; 
+  padding: 3px 6px !important;
   border: 1px solid #ddd;
 }
 
@@ -33,7 +31,7 @@ img, .quarto-figure img {
 }
 
 .side-column {
-  background-color: #eee; 
+  background-color: #eee;
   border-radius: 5px;
   padding:5px;
 }
