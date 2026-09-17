@@ -5,6 +5,31 @@
 
 My personal résumé, using Quarto and some other awesome libraries.
 
+## Project structure
+
+The project is organized so each language is an independent resume (own document, prose and data):
+
+```text
+.
+├── css/              # shared styling for both languages
+│   ├── quarto_style.css
+│   └── report_style.css
+├── resume_functions/ # shared Python helpers
+├── content/          # per-language prose (markdown)
+│   ├── en/           #   header | publications | experience | projects | education
+│   └── fr/           #   (same files, in French when translated)
+├── data/             # per-language tables + shared assets
+│   ├── logo.png      #   shared asset
+│   ├── en/           #   skills.csv, languages.csv
+│   └── fr/           #   (same files, translated when needed)
+├── resume.qmd        # English skeleton: layout + screens + includes
+└── resume_fr.qmd     # French skeleton: same layout, fr paths
+```
+
+`resume.qmd` only holds the structural skeleton (front matter, layout, Python table chunks
+and `{{< include ... >}}` shortcodes). All prose lives in `content/<lang>/`, all table data in
+`data/<lang>/`.
+
 ## Workflow
 
 Built using these tools:
@@ -18,8 +43,22 @@ While it's not a direct part of this project, I created the QR Code for the logo
 To create the HTML file first, and the PDF file later, we need to type this in our CLI:
 
 ```bash
-quarto render resume.qmd
-weasyprint resume.html resume.pdf -s css/report_style.css
+uv sync
+uv run quarto render resume.qmd
+uv run weasyprint resume.html resume.pdf -s css/report_style.css
+```
+
+## Adding a new language (e.g. French)
+
+1. Duplicate `data/en/` as `data/fr/` and translate `skills.csv`/`languages.csv`.
+2. Duplicate `content/en/` as `content/fr/` and translate the markdown files.
+3. Copy `resume.qmd` to `resume_fr.qmd` and swap every `en` path (`content/en` → `content/fr`,
+   `./data/en/` → `./data/fr/`).
+4. Render the new document:
+
+```bash
+uv run quarto render resume_fr.qmd
+uv run weasyprint resume_fr.html resume_fr.pdf -s css/report_style.css
 ```
 
 ## Why use HTML + WeasyPrint
@@ -32,4 +71,3 @@ The approach I took has the following advantages (althought this may be subjecti
 * It allows emojis (LaTeX struggles with that)
 * Great-Tables renders better in HTML format (in June of 2025)
 * It uses CSS (LaTeX makes CSS enjoyable by comparison)
-
