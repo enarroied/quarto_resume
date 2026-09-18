@@ -1,0 +1,82 @@
+---
+toc: false
+lang: es
+format:
+  html:
+    css: css/quarto_style.css
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+---
+
+```{python}
+#| echo: false
+
+import pandas as pd
+from great_tables import GT
+from resume_functions.resume_functions import create_star_rating
+```
+
+::: {.columns}
+::: {.column .side-column width="35%"}
+
+{{< include content/es/header.md >}}
+
+```{python}
+#| echo: false
+
+df_skills = pd.read_csv("./data/es/skills.csv")
+df_skills["stars"] = df_skills["mark"].apply(create_star_rating)
+
+GT(
+    df_skills[["skill_type", "skill", "description", "stars"]],
+    rowname_col="skill",
+    groupname_col="skill_type",
+).tab_header("Habilidades").cols_label(
+    skill="",
+    description="",
+    stars=""
+).cols_width(
+    cases={
+        "skill": "10%",
+        "description": "50%",
+        "stars": "20%"
+    }
+)
+```
+
+```{python}
+#| echo: false
+
+df_languages = pd.read_csv("./data/es/languages.csv")
+df_languages["stars"] = df_languages["mark"].apply(create_star_rating)
+
+GT(
+    df_languages[["Language", "Level", "stars"]]
+).tab_header("Idiomas").cols_label(
+    Language="",
+    Level="",
+    stars=""
+).cols_width(
+    cases={
+        "Language": "20%",
+        "Level": "20%",
+        "stars": "10%"
+    }
+)
+```
+
+:::
+
+::: {.column .main-section width="65%"}
+
+{{< include content/es/publications.md >}}
+
+{{< include content/es/experience.md >}}
+
+{{< include content/es/projects.md >}}
+
+{{< include content/es/education.md >}}
+
+:::
+:::

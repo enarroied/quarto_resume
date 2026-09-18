@@ -11,19 +11,22 @@ The project is organized so each language is an independent resume (own document
 
 ```text
 .
-├── css/              # shared styling for both languages
+├── css/              # shared styling for all languages
 │   ├── quarto_style.css
 │   └── report_style.css
 ├── resume_functions/ # shared Python helpers
 ├── content/          # per-language prose (markdown)
 │   ├── en/           #   header | publications | experience | projects | education
-│   └── fr/           #   (same files, in French when translated)
+│   ├── fr/           #   (same files, in French)
+│   └── es/           #   (same files, in Spanish)
 ├── data/             # per-language tables + shared assets
 │   ├── logo.png      #   shared asset
 │   ├── en/           #   skills.csv, languages.csv
-│   └── fr/           #   (same files, translated when needed)
+│   ├── fr/           #   (same files, translated)
+│   └── es/           #   (same files, translated)
 ├── resume.qmd        # English skeleton: layout + screens + includes
-└── resume_fr.qmd     # French skeleton: same layout, fr paths
+├── resume_fr.qmd     # French skeleton: same layout, fr paths
+└── resume_es.qmd     # Spanish skeleton: same layout, es paths
 ```
 
 `resume.qmd` only holds the structural skeleton (front matter, layout, Python table chunks
@@ -48,18 +51,24 @@ uv run quarto render resume.qmd
 uv run weasyprint resume.html resume.pdf -s css/report_style.css
 ```
 
-## Adding a new language (e.g. French)
-
-1. Duplicate `data/en/` as `data/fr/` and translate `skills.csv`/`languages.csv`.
-2. Duplicate `content/en/` as `content/fr/` and translate the markdown files.
-3. Copy `resume.qmd` to `resume_fr.qmd` and swap every `en` path (`content/en` → `content/fr`,
-   `./data/en/` → `./data/fr/`).
-4. Render the new document:
+The French and Spanish versions follow the exact same pattern with their respective documents:
 
 ```bash
 uv run quarto render resume_fr.qmd
 uv run weasyprint resume_fr.html resume_fr.pdf -s css/report_style.css
+
+uv run quarto render resume_es.qmd
+uv run weasyprint resume_es.html resume_es.pdf -s css/report_style.css
 ```
+
+## Adding a new language
+
+1. Duplicate `data/<lang>/` and translate `skills.csv`/`languages.csv`.
+2. Duplicate `content/<lang>/` and translate the markdown files.
+3. Copy `resume.qmd` to `resume_<lang>.qmd` and swap every `en` path (`content/en` →
+   `content/<lang>`, `./data/en/` → `./data/<lang>/`), and update the `lang:` front-matter key
+   and the table headers (`Skills` → translated, `Languages` → translated).
+4. Render the new document (see the workflow above).
 
 ## Why use HTML + WeasyPrint
 

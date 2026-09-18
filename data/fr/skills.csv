@@ -1,0 +1,14 @@
+skill_type,skill,description,mark
+Programmation,Python,"Langage principal. Traitement de données, automatisation, applications et pipelines de données",5
+Programmation,SQL,"SQL avancé pour l'analytique, l'intégration et l'entrepôt de données",5
+Ingénierie de données,ETL,"Intégration de données, transformation et développement de pipelines",5
+Ingénierie de données,Apache Spark,"Traitement distribué et analyse de données à grande échelle",4
+Ingénierie de données,DuckDB,"Traitement analytique et workflows de données modernes",4
+Bases de données,PostgreSQL,"Bases de données relationnelles, SQL analytique et ingénierie des données",5
+Bases de données,PostGIS,"Bases de données spatiales et traitement de données géospatiales",3
+Géospatial,QGIS,"Analyse SIG, géotraitement, cartographie et gestion des données",4
+Géospatial,GeoPandas,"Traitement de données géospatiales avec Python",4
+Géospatial,Télédétection,"Sentinel-2, NDVI et analytique dérivée de l'imagerie satellite",3
+Applications de données,Taipy / Streamlit / Plotly,"Applications Python interactives pour données et analytique",5
+Systèmes,Git,"Contrôle de version et développement logiciel collaboratif",4
+Systèmes,Linux,"Développement Linux et workflows de données",4
